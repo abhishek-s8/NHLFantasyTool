@@ -1,7 +1,9 @@
 import PowerTime as Time
+
 def PowerplayGoals(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,PPT,PPG):
     Powerplay_Time=Time.Overall_PP_Time(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,PPT) #The Player's Predicted Power Play Time a Game
     Powerplay_Goals=PowerplayGoalsProcess(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,PPG) #The Player's Predicted Power Play Goals a Game
+
     if Powerplay_Time != 0:
         PowerPG =(Powerplay_Goals/Powerplay_Time)*(82*Powerplay_Time)
     else:
@@ -11,6 +13,7 @@ def PowerplayGoals(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,PPT,PPG):
 def PowerplayAssists(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,PPT,PPA):
     Powerplay_Time=Time.Overall_PP_Time(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,PPT) #The Player's Predicted Power Play Time a Game
     Powerplay_Assists=PowerplayAssistsProcess(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,PPA) #The Player's Predicted Power Play Goals a Game
+
     if Powerplay_Time != 0:
         PowerPA =(Powerplay_Assists/Powerplay_Time)*(82*Powerplay_Time)
     else:
@@ -25,13 +28,16 @@ def PowerplayAssistsProcess(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,PPA):
     PP5=AVG_PP_Assists2014(E1,E2)
     PP6=AVG_PP_Assists2013(F1,F2)
     PP7=AVG_PP_Assists2012(G1,G2)
+
     ListOfStats = [PP1,PP2,PP3,PP4,PP5,PP6,PP7]
     Total=0
     Division=0
+
     for num in ListOfStats:
         if num != None:
             Total = Total + num
             Division = Division + 1
+
     if Division > 0:
         PP_Assists_Factor = Total / Division
         New_Prediction = float(PPA) + PP_Assists_Factor
@@ -49,9 +55,11 @@ def PowerplayGoalsProcess(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,PPG):
     PP5=AVG_PP_Goals2014(E1,E2)
     PP6=AVG_PP_Goals2013(F1,F2)
     PP7=AVG_PP_Goals2012(G1,G2)
+
     ListOfStats = [PP1,PP2,PP3,PP4,PP5,PP6,PP7]
     Total=0
     Division=0
+
     for num in ListOfStats:
         if num != None:
             Total = Total + num

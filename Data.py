@@ -2,14 +2,14 @@ from collections import defaultdict
 import bisect
 import math
 
-one=open("NHL2018.csv").read().splitlines()
-two=open("NHL2017.csv").read().splitlines()
-three=open("NHL2016.csv").read().splitlines()
-four=open("NHL2015.csv").read().splitlines()
-five=open("NHL2014.csv").read().splitlines()
-six=open("NHL2013.csv").read().splitlines()
-seven=open("NHL2012.csv").read().splitlines()
-eight=open("NHL2011.csv").read().splitlines()
+one=open("Data/NHL2018.csv").read().splitlines()
+two=open("Data/NHL2017.csv").read().splitlines()
+three=open("Data/NHL2016.csv").read().splitlines()
+four=open("Data/NHL2015.csv").read().splitlines()
+five=open("Data/NHL2014.csv").read().splitlines()
+six=open("Data/NHL2013.csv").read().splitlines()
+seven=open("Data/NHL2012.csv").read().splitlines()
+eight=open("Data/NHL2011.csv").read().splitlines()
 
 new, new2, new3, new4, new5, new6, new7, new8 = [],[],[],[],[],[],[],[]
 options = defaultdict(list)
@@ -74,13 +74,11 @@ for part in eight:
     ages8.append(m[1])
     new8.append(m)
 
-def find_left(a,x):
-    'Locate the leftmost value exactly equal to x'
+def find_left(a,x): #Locate the leftmost value exactly equal to x
     i = bisect.bisect_left(a,x)
     return i
 
-def find_right(a,x):
-    'Locate the rightmost value exactly equal to x and return the location after that value'
+def find_right(a,x): #Locate the rightmost value exactly equal to x and return the location after that value
     i = bisect.bisect_right(a,x)
     return i
 
@@ -130,6 +128,7 @@ def collect2017(start,end,compared,position): #Returns the players with similar 
     high=(math.ceil(float(compared)*10))
     low_end=low/10
     high_end=high/10
+
     if position=="D":
         while (start!=end):
             POS=new2[start][3]
@@ -154,6 +153,7 @@ def collect2016(start,end,compared,position): #Returns the players with similar 
     high=(math.ceil(float(compared)*10))
     low_end=low/10
     high_end=high/10
+
     if position=="D":
         while (start!=end):
             POS=new3[start][3]
@@ -178,6 +178,7 @@ def collect2015(start,end,compared,position): #Returns the players with similar 
     high=(math.ceil(float(compared)*10))
     low_end=low/10
     high_end=high/10
+
     if position=="D":
         while (start!=end):
             POS=new4[start][3]
@@ -202,6 +203,7 @@ def collect2014(start,end,compared,position): #Returns the players with similar 
     high=(math.ceil(float(compared)*10))
     low_end=low/10
     high_end=high/10
+
     if position=="D":
         while (start!=end):
             POS=new5[start][3]
@@ -226,6 +228,7 @@ def collect2013(start,end,compared,position): #Returns the players with similar 
     high=(math.ceil(float(compared)*10))
     low_end=low/10
     high_end=high/10
+
     if position=="D":
         while (start!=end):
             POS=new6[start][3]
@@ -250,6 +253,7 @@ def collect2012(start,end,compared,position): #Returns the players with similar 
     high=(math.ceil(float(compared)*10))
     low_end=low/10
     high_end=high/10
+
     if position=="D":
         while (start!=end):
             POS=new7[start][3]
@@ -274,6 +278,7 @@ def collect2011(start,end,compared,position): #Returns the players with similar 
     high=(math.ceil(float(compared)*10))
     low_end=low/10
     high_end=high/10
+
     if position=="D":
         while (start!=end):
             POS=new8[start][3]
@@ -295,8 +300,10 @@ def collect2011(start,end,compared,position): #Returns the players with similar 
 def compare2018(start,end,people):
     player=[]
     compared=[]
+
     for part in people:
         player.append(part[0])
+
     while (start!=end):
         if new[start][0]in player:
             compared.append(new[start])
@@ -306,8 +313,10 @@ def compare2018(start,end,people):
 def compare2017(start,end,people):
     player=[]
     compared=[]
+
     for part in people:
         player.append(part[0])
+
     while (start!=end):
         if new2[start][0]in player:
             compared.append(new2[start])
@@ -317,8 +326,10 @@ def compare2017(start,end,people):
 def compare2016(start,end,people):
     player=[]
     compared=[]
+
     for part in people:
         player.append(part[0])
+
     while (start!=end):
         if new3[start][0]in player:
             compared.append(new3[start])
@@ -328,8 +339,10 @@ def compare2016(start,end,people):
 def compare2015(start,end,people):
     player=[]
     compared=[]
+
     for part in people:
         player.append(part[0])
+
     while (start!=end):
         if new4[start][0]in player:
             compared.append(new4[start])
@@ -339,8 +352,10 @@ def compare2015(start,end,people):
 def compare2014(start,end,people):
     player=[]
     compared=[]
+
     for part in people:
         player.append(part[0])
+
     while (start!=end):
         if new5[start][0]in player:
             compared.append(new5[start])
@@ -350,8 +365,10 @@ def compare2014(start,end,people):
 def compare2013(start,end,people):
     player=[]
     compared=[]
+
     for part in people:
         player.append(part[0])
+
     while (start!=end):
         if new6[start][0]in player:
             compared.append(new6[start])
@@ -361,8 +378,10 @@ def compare2013(start,end,people):
 def compare2012(start,end,people):
     player=[]
     compared=[]
+
     for part in people:
         player.append(part[0])
+
     while (start!=end):
         if new7[start][0]in player:
             compared.append(new7[start])

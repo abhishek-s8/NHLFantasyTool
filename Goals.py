@@ -14,13 +14,16 @@ def GoalsProcess(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,GPG,Age):
     GPG5 = Goals_Per_Game2014(E1,E2)
     GPG6 = Goals_Per_Game2013(F1,F2)
     GPG7 = Goals_Per_Game2012(G1,G2)
+
     ListOfStats = [GPG1,GPG2,GPG3,GPG4,GPG5,GPG6,GPG7]
     Total=0
     Division=0
+
     for num in ListOfStats:
         if num != None:
             Total = Total + num
             Division = Division + 1
+
     if Division > 0:
         Shots_Factor = Total / Division
         New_Prediction = float(GPG) + Shots_Factor
@@ -33,6 +36,7 @@ def GoalsProcess(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,GPG,Age):
 def Backup(GPG,AGE):
     GoalPerGame = float(GPG)
     Age = float(AGE)
+
     if Age < 20:
         GoalPerGame = GoalPerGame * 1.05
     elif Age > 20 and Age < 24:
@@ -49,6 +53,7 @@ def Backup(GPG,AGE):
 
 def Goals_Per_Game2018(A1,A2):
     Total=0
+
     if len(A1)>0 and len(A2)>0:
         for player in A1:
             count=0
@@ -68,6 +73,7 @@ def Goals_Per_Game2018(A1,A2):
 
 def Goals_Per_Game2017(B1,B2):
     Total=0
+
     if len(B1)>0 and len(B2)>0:
         for player in B1:
             count=0
@@ -87,6 +93,7 @@ def Goals_Per_Game2017(B1,B2):
 
 def Goals_Per_Game2016(C1,C2):
     Total=0
+
     if len(C1)>0 and len(C2)>0:
         for player in C1:
             count=0
@@ -106,6 +113,7 @@ def Goals_Per_Game2016(C1,C2):
 
 def Goals_Per_Game2015(D1,D2):
     Total=0
+
     if len(D1)>0 and len(D2)>0:
         for player in D1:
             count=0
@@ -125,6 +133,7 @@ def Goals_Per_Game2015(D1,D2):
 
 def Goals_Per_Game2014(E1,E2):
     Total=0
+
     if len(E1)>0 and len(E2)>0:
         for player in E1:
             count=0
@@ -144,6 +153,7 @@ def Goals_Per_Game2014(E1,E2):
 
 def Goals_Per_Game2013(F1,F2):
     Total=0
+
     if len(F1)>0 and len(F2)>0:
         for player in F1:
             count=0
@@ -163,6 +173,7 @@ def Goals_Per_Game2013(F1,F2):
 
 def Goals_Per_Game2012(G1,G2):
     Total=0
+
     if len(G1)>0 and len(G2)>0:
         for player in G1:
             count=0
